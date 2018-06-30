@@ -1,6 +1,25 @@
 {
 	"comment": "",
 	"ignore": "test",
-	"package": [],
+	"package": [
+		{
+			"checksumSHA1": "b3lXp13eHq+B6dSqVdd6LcWpziY=",
+			"path": "server",
+			"revision": "f4eed444bd9ab554ce487cb152f7e61b0da4bbfe",
+			"revisionTime": "2018-06-30T19:17:18Z"
+		},
+		{
+			"checksumSHA1": "5mGjShfzM/e0yDyuRvIXwcNWA0k=",
+			"path": "server/handler",
+			"revision": "f4eed444bd9ab554ce487cb152f7e61b0da4bbfe",
+			"revisionTime": "2018-06-30T19:17:18Z"
+		},
+		{
+			"checksumSHA1": "qbK5jvv9unWN3dZyUgmnFKtasF0=",
+			"path": "server/router",
+			"revision": "f4eed444bd9ab554ce487cb152f7e61b0da4bbfe",
+			"revisionTime": "2018-06-30T19:17:18Z"
+		}
+	],
 	"rootPath": "server"
 }
