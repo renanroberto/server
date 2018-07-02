@@ -15,9 +15,10 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 	token, err := getToken(r)
 	if err != nil {
 		http.Error(w, err.Error(), 400)
+    return
 	}
 
-  // TODO: validate and decode JWT 
+	// TODO: validate and decode JWT
 
 	json.NewEncoder(w).Encode(token)
 }
