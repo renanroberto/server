@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 )
 
-func JWTencode(claims map[string]string, secret string) string {
+func JWTencode(claims map[string]interface{}, secret string) string {
 	header := make(map[string]string)
 
 	header["typ"] = "JWT"

@@ -3,6 +3,7 @@ package handler
 import (
 	"encoding/json"
 	"net/http"
+	"time"
 
 	"server/jwt"
 )
@@ -19,7 +20,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 
 	var (
 		err  error
-		user map[string]string
+		user User
 	)
 
 	err = json.NewDecoder(r.Body).Decode(&user)
@@ -28,9 +29,10 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	claims := make(map[string]string)
+	claims := make(map[string]interface{})
 
-	claims["email"] = user["email"]
+	claims["email"] = user.Email
+	claims["exp"] = 15 * time.Second
 
 	token := jwt.JWTencode(claims, secret)
 	auth := map[string]string{"token": token}
