@@ -3,6 +3,8 @@ package handler
 import (
 	"encoding/json"
 	"net/http"
+
+	"server/jwt"
 )
 
 const secret = "qualquer coisa"
@@ -12,36 +14,28 @@ type User struct {
 	Password string `json:"password,omitempty"`
 }
 
-type TokenGen struct {
-	Token string `json:"token"`
-}
-
-func (user *User) JSONRead(r *http.Request) error {
-	return json.NewDecoder(r.Body).Decode(&user)
-}
-
-func (auth TokenGen) JSONWrite(w http.ResponseWriter) error {
-	return json.NewEncoder(w).Encode(auth)
-}
-
 func Login(w http.ResponseWriter, r *http.Request) {
 	Headers(w, "json")
 
 	var (
 		err  error
-		user User
+		user map[string]string
 	)
 
-	err = user.JSONRead(r)
+	err = json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {
 		http.Error(w, "Invalid JSON", 400)
 		return
 	}
 
-	token := JWTencode(user, secret)
-	auth := TokenGen{token}
+	claims := make(map[string]string)
 
-	err = auth.JSONWrite(w)
+	claims["email"] = user["email"]
+
+	token := jwt.JWTencode(claims, secret)
+	auth := map[string]string{"token": token}
+
+	err = json.NewEncoder(w).Encode(auth)
 	if err != nil {
 		http.Error(w, "Error on generate token", 500)
 		return
