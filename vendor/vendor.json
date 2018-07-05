@@ -5,26 +5,26 @@
 		{
 			"checksumSHA1": "d3IFzJhl9TJ+GUMtMIPfjtcV+Y4=",
 			"path": "server",
-			"revision": "0bf07defa483a5ac9fd511830178610a71c5f499",
-			"revisionTime": "2018-07-05T13:33:04Z"
+			"revision": "d0a9c149c98536afb03a7835f9e995399e65b03a",
+			"revisionTime": "2018-07-05T13:39:34Z"
 		},
 		{
 			"checksumSHA1": "xfi+Qz3tXr1LQ7gCSseS79EigMA=",
 			"path": "server/handler",
-			"revision": "0bf07defa483a5ac9fd511830178610a71c5f499",
-			"revisionTime": "2018-07-05T13:33:04Z"
+			"revision": "d0a9c149c98536afb03a7835f9e995399e65b03a",
+			"revisionTime": "2018-07-05T13:39:34Z"
 		},
 		{
 			"checksumSHA1": "VS0ucyoIg6TmcpUvVgdP+ZpfCh4=",
 			"path": "server/jwt",
-			"revision": "0bf07defa483a5ac9fd511830178610a71c5f499",
-			"revisionTime": "2018-07-05T13:33:04Z"
+			"revision": "d0a9c149c98536afb03a7835f9e995399e65b03a",
+			"revisionTime": "2018-07-05T13:39:34Z"
 		},
 		{
 			"checksumSHA1": "qbK5jvv9unWN3dZyUgmnFKtasF0=",
 			"path": "server/router",
-			"revision": "0bf07defa483a5ac9fd511830178610a71c5f499",
-			"revisionTime": "2018-07-05T13:33:04Z"
+			"revision": "d0a9c149c98536afb03a7835f9e995399e65b03a",
+			"revisionTime": "2018-07-05T13:39:34Z"
 		}
 	],
 	"rootPath": "server"
