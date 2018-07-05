@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	_ "server/jwt"
+	"server/jwt"
 )
 
 func Auth(w http.ResponseWriter, r *http.Request) {
@@ -15,12 +15,13 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 	token, err := getToken(r)
 	if err != nil {
 		http.Error(w, err.Error(), 400)
-    return
+		return
 	}
 
 	// TODO: validate and decode JWT
+	claims := jwt.JWTdecode(token)
 
-	json.NewEncoder(w).Encode(token)
+	json.NewEncoder(w).Encode(claims)
 }
 
 func getToken(r *http.Request) (string, error) {
