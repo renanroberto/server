@@ -44,7 +44,7 @@ func (route Route) MethodAllowed(handler http.HandlerFunc) http.HandlerFunc {
 
 		hasMethod := false
 		for _, value := range route.Methods {
-			if method == value {
+			if method == value || method == "OPTIONS" {
 				hasMethod = true
 				break
 			}
